@@ -1,0 +1,577 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Montserrat&family=Nunito&family=Ubuntu&display=swap');
+/* font-family: 'Lato', sans-serif;
+font-family: 'Montserrat', sans-serif;
+font-family: 'Nunito', sans-serif;
+font-family: 'Ubuntu', sans-serif; */
+
+:root{
+    --primary-color: rgb(228, 228, 228);
+    --secondary-color: rgb(4, 87, 87);
+    --highlight-color: white;
+    --darklight-color: black;
+    --bg-color: rgb(34, 34, 34);
+    --opaque-color: rgb(215, 215, 215);
+}
+a, a:hover, a:visited, a:active {
+    color: inherit;
+    text-decoration: none;
+}
+button {
+    font-family: unset;
+    font-size: unset;
+}
+button:hover {
+    font-family: unset;
+}
+.slide-out-to-right {
+    width: 0px;
+    transition: width 0.9s ease;
+    overflow: hidden;
+    box-sizing: border-box;
+    white-space: nowrap;
+}
+.sliding-link:hover .slide-out-to-right {
+    width: 240px;
+}
+.highlight {
+    transition: color 0.2s ease,
+                text-shadow 0.2s ease;
+}
+.highlight:hover {
+    color: var(--highlight-color);
+    text-shadow: 0 0 1px var(--primary-color);
+}
+.highlight-over-img {
+    transition: background-color 0.2s ease,
+                color 0.2s ease,
+                text-shadow 0.2s ease,
+                box-shadow 0.2s ease;
+}
+.highlight-over-img:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+    color: var(--highlight-color);
+    text-shadow: 0 0 1px var(--primary-color);
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2), 0px 0px 50px rgba(0, 0, 0, 0.2);
+}
+/* .lantern_overlay:before {
+    --size: 0;
+    content: '';
+    position: absolute;
+    left: var(--x);
+    top: var(--y);
+    width: var(--size);
+    height: var(--size);
+    background: radial-gradient(circle closest-side, rgb(50, 50, 50), transparent);
+    transform: translate(-50%, -50%);
+    transition: width 0.5s ease, height 0.2s ease;
+    z-index: 1;
+}
+.lantern_overlay:hover:before {
+    --size: 200px;
+} */
+.simple-btn {
+    position: relative;
+    margin: 25px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 54px;
+    width: auto;
+    background-color: transparent;
+    color: var(--primary-color);
+    border: solid var(--primary-color) 2px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    transition: border 0.4s ease;
+    overflow: hidden;
+}
+.simple-btn:hover {
+    color: var(--bg-color);
+    font-weight: bolder;
+    border: solid var(--highlight-color) 2px;
+    cursor: pointer;
+}
+.simple-btn:hover::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 0%;
+    width: 0%;
+    background-color: var(--highlight-color);
+    border-radius: 5px;
+    overflow: hidden;
+    z-index: -1;
+    animation: lightFromCenter 0.4s forwards;
+}
+
+@keyframes lightFromCenter {
+    0%{
+        margin-left: 0%;
+        margin-top: 0%;
+        height: 0%;
+        width: 0%;
+    }
+    50% {
+        box-shadow: 0px 0px 5px var(--primary-color), 0px 0px 10px var(--primary-color), 0px 0px 15px var(--primary-color), 0px 0px 20px var(--primary-color);
+    }
+    90%{
+        margin-left: -50%;
+        margin-top: -25px;
+        height: 100%;
+        width: 100%;
+        box-shadow: 0px 0px 5px var(--primary-color), 0px 0px 10px var(--primary-color);
+
+    }
+    100%{
+        margin-left: -50%;
+        margin-top: -25px;
+        height: 100%;
+        width: 100%;
+    }
+}
+
+#projects .simple-btn {
+    width: 60%;
+}
+#cv-resume .simple-btn {
+    width: 90%;
+}
+body {
+    margin: 0px;
+    font-family: 'Nunito', sans-serif;
+    color: var(--primary-color);
+    background-color: var(--bg-color);
+    font-size: 1.3em;
+}
+body * {
+    background-color: transparent;
+}
+.water-effect {
+    background-image: url('/images/background-gradient-1.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 950px;
+}
+h1 {
+    font-weight: normal;
+    margin: auto;
+}
+h2 {
+    font-family: 'Montserrat', sans-serif;
+}
+section {
+    border-radius: 20px;
+    padding: 10px 15px;
+    overflow: hidden;
+    text-align: center;
+}
+.description {
+    text-align: justify;
+}
+.grid-1 {
+    padding: 0px 100px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+.grid-2 {
+    /* position: relative; */
+    overflow: hidden;
+    color: var(--opaque-color);
+    padding: 100px 6% 0px 3%;
+    margin-left: 90px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: auto;
+    column-gap: 3%;
+    row-gap: 50px;
+    justify-items: center;
+    align-items: center;
+}
+#projects {
+    grid-column: 1 / 3;
+}
+#skills {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+}
+#about {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+}
+#cv-resume {
+    grid-column: 1 / 3;
+}
+#footer {
+    grid-column: 1 / 3;
+}
+nav {
+    position: fixed;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    display: grid;
+    grid-template-columns: auto;
+    grid-auto-rows: 25%;
+    align-items: center;
+    align-content: center;
+}
+nav a {
+    height: 50px;
+    width: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+nav a i {
+    font-size: 3em;
+    padding: 10px 15px 10px 25px;
+}
+nav a .slide-out-to-right {
+    font-size: 1.3em;
+}
+.btn-shine {
+    text-shadow: none;
+    transition: color 0.2s ease,
+                text-shadow 0.2s ease-out;
+}
+.btn-shine:hover {
+    text-shadow: 0 0 3px var(--primary-color), 0 0 10px var(--bg-color), 0 0 20px var(--bg-color);
+}
+#name {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 4.5em;
+    margin: 100px 20px 30px 20px;
+    display: grid;
+    grid-template-columns: repeat(13, auto);
+    column-gap: 5px;
+}
+#name > div {
+    text-shadow: 0 0 3px var(--primary-color);
+    /* transition: color 0.2s ease,
+                text-shadow 1s ease-out; */
+}
+#name > div:hover {
+    cursor: default;
+    animation: shine 1s forwards;
+}
+
+@keyframes shine {
+    0%{
+        text-shadow: 0 0 3px var(--primary-color);
+    }
+    30%{
+        text-shadow: 0 0 10px var(--highlight-color), 0 0 20px var(--highlight-color), 0 0 30px var(--highlight-color), 0 0 40px var(--primary-color), 0 0 70px var(--primary-color), 0 0 80px var(--primary-color), 0 0 100px var(--primary-color), 0 0 150px var(--primary-color);
+    }
+    100%{
+        text-shadow: 0 0 10px var(--highlight-color), 0 0 20px var(--highlight-color), 0 0 30px var(--highlight-color);
+    }
+}
+.subtitle {
+    margin: 30px 150px;
+}
+.subtitle > * {
+    font-size: 2em;
+    text-shadow: none;
+    transition: color 0.2s ease,
+                text-shadow 0.2s ease-out;
+}
+.subtitle > *:hover {
+    cursor: default;
+    text-shadow: 0 0 4px var(--primary-color);
+}
+#intro {
+    width: 650px;
+    margin: 40px 0px;
+}
+#projects {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.video-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: auto;
+    justify-items: center;
+    justify-content: center;
+    column-gap: 7%;
+    margin: 0px 3%;
+}
+.video {
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 25px 0px;
+}
+.video img {
+    vertical-align: middle;
+    width: 100%;
+    height: 0%;
+}
+#scramble {
+    width: 550px;
+    height: 320px;
+    position: relative;
+    color: var(--primary-color);
+}
+#scramble div {
+    position: absolute;
+    transition: top 5s ease-in-out,
+                left 5s ease-in-out,
+                font-size 4s ease-in-out,
+                opacity 5s ease-in-out; /* timing should be compatible with scramble.js 'interval' value */
+}
+.skill-importance-1 {
+    font-size: 1.1em;
+}
+.skill-importance-2 {
+    font-size: 1em;
+}
+.skill-importance-3 {
+    font-size: 0.9em;
+}
+#about {
+    margin-left: 30px;
+    margin-right: 30px;
+}
+#about .description {
+    text-align: center;
+}
+#footer {
+    height: 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    justify-self: flex-end;
+    justify-items: flex-end;
+    overflow: visible;
+}
+#cat-img {
+    margin-top: -160px;
+    margin-right: -20px;
+    width: 180px;
+    height: 120px;
+}
+
+@media(max-width: 1700px){
+    .water-effect {
+        /* background-image: url('/images/background-gradient-1.jpg'); */
+        height: 850px;
+    }
+}
+
+@media(max-width: 1500px){
+    body {
+        font-size: 1em;
+    }
+    .water-effect {
+        /* background-image: url('/images/background-gradient-1.jpg'); */
+        height: 700px;
+    }
+    nav a i {
+        padding-left: 20px;
+    }
+    .grid-2 {
+        margin-left: 75px;
+    }
+    #scramble {
+        width: 450px;
+        height: 260px;
+    }
+}
+
+@media(max-width: 1150px){
+    #name {
+        font-size: 3.8em;
+    }
+    .subtitle > * {
+        font-size: 1.7em;
+    }
+    #intro {
+        width: 500px;
+    }
+    nav a i {
+        padding-left: 20px;
+    }
+    .video-grid {
+        margin: 0px;
+    }
+    #scramble {
+        width: 350px;
+        height: 210px;
+    }
+    #cat-img {
+        margin-right: -70px;
+    }
+}
+
+@media(max-width: 1000px){
+    .grid-1 {
+        padding: 0px 100px 0px 150px;
+    }
+    #cat-img {
+        margin-right: -60px;
+    }
+}
+
+@media(max-width: 890px){
+    .water-effect {
+        background-position: -100px;
+    }
+    #name {
+        font-size: 3em;
+    }
+    .subtitle > * {
+        font-size: 1.5em;
+    }
+    #intro {
+        margin-top: 0px;
+        width: 90%;
+    }
+    .grid-2 {
+        padding: 40px 10% 0px 5%;
+        margin-left: 90px;
+        grid-template-columns: 1fr;
+        overflow: visible;
+    }
+    #projects, #skills, #about, #cv-resume, #footer {
+        grid-column: auto;
+        grid-row: auto;
+    }
+    .video-grid {
+        grid-template-columns: 1fr;
+        row-gap: 50px;
+    }
+    .video {
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    #skills {
+        width: 80%;
+    }
+    #scramble {
+        width: 100%;
+        height: 230px;
+    }
+    #about .description {
+        text-align: justify;
+    }
+    #cat-img {
+        margin-top: -120px;
+        width: 120px;
+        height: 80px;
+    }
+}
+
+@media(max-width: 750px){
+    .water-effect {
+        background-position: -150px;
+    }
+    .sliding-link:hover .slide-out-to-right {
+        width: 220px;
+    }
+    nav {
+        bottom: unset;
+        right: 0px;
+        grid-template-columns: 30% 30% 30%;
+        grid-auto-rows: auto;
+        justify-items: center;
+        justify-content: center;
+    }
+    nav a {
+        height: 70px;
+    }
+    nav a i {
+        padding: 25px 15px 10px 10px;
+    }
+    nav a .slide-out-to-right {
+        font-size: 1.2em;
+    }
+    .grid-1 {
+        padding: 0px 10% 0px 10%;
+    }
+    #name {
+        margin-top: 150px;
+        font-size: 2.8em;
+    }
+    .subtitle > * {
+        font-size: 1.5em;
+    }
+    #intro {
+        width: 100%;
+    }
+    .grid-2 {
+        padding-left: 10%;
+        margin-left: 0px;
+    }
+    .description, section {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+    #cat-img {
+        margin-top: -120px;
+        width: 120px;
+        height: 80px;
+    }
+}
+
+@media(max-width: 620px){
+    .water-effect {
+        background-position: -200px;
+    }
+    #name {
+        margin-top: 130px;
+        column-gap: 2px;
+    }
+    .subtitle {
+        margin: 30px 0px;
+    }
+    #skills {
+        width: 100%;
+    }
+    #cat-img {
+        margin-top: -100px;
+        margin-right: -40px;
+        width: 90px;
+        height: 60px;
+    }
+}
+
+@media(max-width: 530px){
+    .water-effect {
+        background-position: -250px;
+    }
+    #name {
+        grid-template-columns: repeat(6, auto) 0px;
+        grid-template-rows: auto;
+        column-gap: 0px;
+        margin-top: 100px;
+        margin-bottom: 40px;
+    }
+    #name > div {
+        padding-left: 2.5px;
+        padding-right: 2.5px;
+        text-shadow: 0 0 2px var(--primary-color), 0 0 3px var(--primary-color);
+        animation: shine 1s;
+    }
+    .subtitle > * {
+        text-shadow: 0 0 2px var(--primary-color);
+    }
+    .grid-2 {
+        padding-top: 40px;
+        color: var(--primary-color);
+    }
+    .video {
+        width: 100%;
+    }
+    #cat-img {
+        margin-top: -70px;
+        margin-right: -20px;
+        width: 90px;
+        height: 60px;
+    }
+}
