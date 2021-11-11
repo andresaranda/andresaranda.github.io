@@ -86,13 +86,7 @@ button:hover {
     transition: border 0.4s ease;
     overflow: hidden;
 }
-.simple-btn:hover {
-    color: var(--bg-color);
-    font-weight: bolder;
-    border: solid var(--highlight-color) 2px;
-    cursor: pointer;
-}
-.simple-btn:hover::before {
+.simple-btn::before {
     content: "";
     position: absolute;
     top: 50%;
@@ -103,6 +97,15 @@ button:hover {
     border-radius: 5px;
     overflow: hidden;
     z-index: -1;
+    animation: dimLightToCenter 0.2s;
+}
+.simple-btn:hover {
+    color: var(--bg-color);
+    font-weight: bolder;
+    border: solid var(--highlight-color) 2px;
+    cursor: pointer;
+}
+.simple-btn:hover::before {
     animation: lightFromCenter 0.4s forwards;
 }
 
@@ -125,6 +128,32 @@ button:hover {
 
     }
     100%{
+        margin-left: -50%;
+        margin-top: -25px;
+        height: 100%;
+        width: 100%;
+    }
+}
+
+@keyframes dimLightToCenter {
+    100%{
+        margin-left: 0%;
+        margin-top: 0%;
+        height: 0%;
+        width: 0%;
+    }
+    50% {
+        box-shadow: 0px 0px 5px var(--primary-color), 0px 0px 10px var(--primary-color), 0px 0px 15px var(--primary-color), 0px 0px 20px var(--primary-color);
+    }
+    10%{
+        margin-left: -50%;
+        margin-top: -25px;
+        height: 100%;
+        width: 100%;
+        box-shadow: 0px 0px 5px var(--primary-color), 0px 0px 10px var(--primary-color);
+
+    }
+    0%{
         margin-left: -50%;
         margin-top: -25px;
         height: 100%;
@@ -309,7 +338,7 @@ nav a .slide-out-to-right {
 .video img {
     vertical-align: middle;
     width: 100%;
-    height: 0%;
+    height: auto;
 }
 #scramble {
     width: 550px;
