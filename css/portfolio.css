@@ -544,6 +544,10 @@ nav a .slide-out-to-right {
         padding-left: 0px;
         padding-right: 0px;
     }
+    #about {
+        margin-left: 0px;
+        margin-right: 0px;
+    }
     #cat-img {
         margin-top: -120px;
         width: 120px;
