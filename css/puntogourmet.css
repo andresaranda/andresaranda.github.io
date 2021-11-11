@@ -463,7 +463,7 @@ footer > div {
     #logo-top {
         padding-top: 15px;
     }
-    #image-top p {
+    #image-top h1 {
         font-size: 1.6em;
     }
     .separator-curves {
@@ -638,7 +638,7 @@ footer > div {
     #bar-top {
         grid-template-columns: 1fr auto;
     }
-    #image-top p {
+    #image-top h1 {
         font-size: 1.5em;
         padding-left: 15%;
         padding-right: 15%;
@@ -725,11 +725,12 @@ footer > div {
     }
     #logo-top {
         padding-top: 50px;
+        padding-bottom: 15px;
     }
     #bar-top {
         display: none;
     }
-    #image-top p {
+    #image-top h1 {
         font-size: 1.3em;
     }
     .hidden {
@@ -758,6 +759,9 @@ footer > div {
 @media(max-width: 395px) { /*375*/
     #image-top {
         height: 200px;
+    }
+    #image-top h1 {
+        font-size: 1.2em;
     }
     .two-column-block {
         padding-left: 10px;
