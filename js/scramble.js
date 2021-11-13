@@ -2,7 +2,6 @@
 // gem game
 // liquid button
 // videos
-// clouds for mobile
 
 const skills_container = document.querySelector('#scramble')
 const skills_list = document.querySelectorAll('#scramble .skill')

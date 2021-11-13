@@ -9,33 +9,36 @@
             Andres Aranda / Web Developer
         </title>
         <script src="https://kit.fontawesome.com/0afa017979.js" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="/css/portfolio.css">
+        <link rel="stylesheet" href="/css/styles.css">
         <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
     </head>
     <body>
         <main>
-            <div id="clouds"></div>
             <div class="grid-1 water-effect">
                 <nav>
-                    <a class="liquid-btn sliding-link btn-shine" href="mailto:aaranda@pucp.edu.pe">
+                    <a class="sliding-link btn-shine" href="mailto:aaranda@pucp.edu.pe">
                         <div>
                             <i class="far fa-envelope"></i>
                         </div>
                         <div class="slide-out-to-right">aaranda@pucp.edu.pe</div>
                     </a>
-                    <a class="liquid-btn sliding-link btn-shine" href="https://github.com/andresaranda">
+                    <a class="sliding-link btn-shine" href="https://github.com/andresaranda">
                         <div>
                             <i class="fab fa-github-alt"></i>
                         </div>
                         <div class="slide-out-to-right">github.com/andresaranda</div>
                     </a>
-                    <a class="liquid-btn sliding-link btn-shine" href="tel:+51-991-099-482">
+                    <a class="sliding-link btn-shine" href="tel:+51-991-099-482">
                         <div>
                             <i class="fas fa-phone-alt"></i>
                         </div>
                         <div class="slide-out-to-right">+51-991-099-482</div>
                     </a>
                 </nav>
+                <div id="clouds">
+                    <img class="cloud" id="cloud-1" src="/images/clouds.png" alt="">
+                    <img class="cloud" id="cloud-2" src="/images/clouds.png" alt="">
+                </div>
                 <section id="header">
                     <div id="name">
                         <div>A</div>
@@ -70,9 +73,9 @@
                         <section id="chess-online" class="highlight">
                             <h3>Online Multiplayer Chess</h3>
                             <a href="https://github.com/andresaranda/chess-online">
-                                <div class="video liquid-btn">
+                                <div class="video-container liquid-btn">
                                     <img src="/images/chessonline-screenshot.png" alt="Chess online screenshot">
-                                    <!-- <iframe src="" frameborder="0" alt="Imbeded video of chess game in use"></iframe> -->
+                                    <!-- <video class="video" loop="" src="/images/chessonline-video.mp4" width="auto" height="auto" alt="Imbeded video of chess game in use"></video> -->
                                 </div>
                             </a>
                             <p class="description">
@@ -80,16 +83,16 @@
                             </p>
                             <a href="https://github.com/andresaranda/chess-online">
                                 <div class="simple-btn">
-                                    Go to Chess Online
+                                    Go to Chess Online code
                                 </div>
                             </a>
                         </section>
                         <section id="punto-gourmet-online" class="highlight">
                             <h3>Landing Page for Specialty Grocery Store</h3>
-                            <a href="/puntogourmet.html">
-                                <div class="video liquid-btn">
+                            <a href="puntogourmet.html">
+                                <div class="video-container liquid-btn">
                                     <img src="/images/puntogourmet-screenshot.png" alt="Punto Gourmet online screenshot">
-                                    <!-- <iframe src="" frameborder="0" alt="Imbeded video of landing page in use"></iframe> -->
+                                    <!-- <video class="video" loop="" src="/images/puntogourmet-video.mp4" width="auto" height="auto" alt="Imbeded video of landing page in use"></video> -->
                                 </div>
                             </a>
                             <p class="description">
@@ -112,7 +115,6 @@
                         <div class="skill"><div class="skill-importance-2">HTML5</div></div>
                         <div class="skill"><div class="skill-importance-1">Vue.js</div></div>
                         <div class="skill"><div class="skill-importance-1">Node.js</div></div>
-                        <div class="skill"><div class="skill-importance-2">Socket.io</div></div>
                         <div class="skill"><div class="skill-importance-3">Grid</div></div>
                         <div class="skill"><div class="skill-importance-3">Flexbox</div></div>
                         <div class="skill"><div class="skill-importance-3">ES6</div></div>
@@ -131,9 +133,7 @@
                     <p class="description">
                         Here you will find my resume in PDF format
                     </p>
-                    <a href="/files/CV - Andres Aranda.pdf" download>
-                        <button class="simple-btn">Download my resume in PDF</button>
-                    </a>
+                    <button class="simple-btn">Download my resume in PDF</button>
                 </section>
                 <section id="footer" class="highlight">
                     <img id="cat-img" src="/images/cat.png" alt="Cat">
@@ -142,8 +142,9 @@
         </main>
     </body>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="/js/jquery.ripples.js"></script>
-    <script type="text/javascript" src="/js/ripples-dom.js"></script>
+    <script type="text/javascript" src="/js/jquery.ripples.js"></script>
+    <script type="text/javascript" src="/js/ripples-&-clouds.js"></script>
     <script type="text/javascript" src="/js/scramble.js"></script>
+    <script type="text/javascript" src="/js/video-controls.js"></script>
     <!-- <script type="text/javascript" src="/js/lantern.js"></script> -->
 </html>
