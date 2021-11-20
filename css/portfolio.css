@@ -295,6 +295,7 @@ nav a .slide-out-to-right {
 }
 #name > div {
     text-shadow: 0 0 3px var(--primary-color);
+    user-select: none;
     /* transition: color 0.2s ease,
                 text-shadow 1s ease-out; */
 }
@@ -320,6 +321,7 @@ nav a .slide-out-to-right {
 .subtitle > * {
     font-size: 2em;
     text-shadow: none;
+    user-select: none;
     transition: color 0.2s ease,
                 text-shadow 0.2s ease-out;
 }
