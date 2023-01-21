@@ -331,7 +331,7 @@ a, a:hover, a:visited, a:active {
     background-color: var(--color-text-over-img-bg);
 }
 #image-top {
-    background-image: url("/images/img-bg-3.jpg");
+    background-image: url("../images/img-bg-3.jpg");
     background-position: 75% 45%;
     height: 550px;
 }
@@ -344,17 +344,17 @@ a, a:hover, a:visited, a:active {
     background-color: var(--color-overlay);
 }
 #image-canastas {
-    background-image: url("/images/img-bg-1.jpg");
+    background-image: url("../images/img-bg-1.jpg");
     background-position: 37% 23%;
     height: 550px;
 }
 #image-tablas {
-    background-image: url("/images/img-bg-2.jpg");
+    background-image: url("../images/img-bg-2.jpg");
     background-position: 35% 55%;
     height: 550px;
 }
 #image-nosotros {
-    background-image: url("/images/img-bg-4.jpg");
+    background-image: url("../images/img-bg-4.jpg");
     background-position: 75% 37%;
     height: 550px;
 }

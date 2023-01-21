@@ -178,7 +178,7 @@ body * {
     background-color: transparent;
 }
 .water-effect {
-    background-image: url('/images/background-gradient-1.jpg');
+    background-image: url('../images/background-gradient-1.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     height: 950px;
@@ -288,7 +288,7 @@ nav a .slide-out-to-right {
 #name {
     font-family: 'Montserrat', sans-serif;
     font-size: 4.5em;
-    margin: 100px 20px 30px 20px;
+    margin: 100px 50px 30px 50px;
     display: grid;
     grid-template-columns: repeat(13, auto);
     column-gap: 5px;
@@ -407,7 +407,7 @@ nav a .slide-out-to-right {
 
 @media(max-width: 1700px){
     .water-effect {
-        /* background-image: url('/images/background-gradient-1.jpg'); */
+        /* background-image: url('../images/background-gradient-1.jpg'); */
         height: 850px;
     }
 }
@@ -417,7 +417,7 @@ nav a .slide-out-to-right {
         font-size: 1em;
     }
     .water-effect {
-        /* background-image: url('/images/background-gradient-1.jpg'); */
+        /* background-image: url('../images/background-gradient-1.jpg'); */
         height: 700px;
     }
     nav a i {
