@@ -32,7 +32,7 @@ button:hover {
     white-space: nowrap;
 }
 .sliding-link:hover .slide-out-to-right {
-    width: 240px;
+    width: 320px;
 }
 .highlight {
     transition: color 0.2s ease,
