@@ -7,9 +7,9 @@ font-family: 'Ubuntu', sans-serif; */
 
 :root{
     --primary-color: rgb(228, 228, 228);
-    --secondary-color: rgb(4, 87, 87);
+    /* --secondary-color: rgb(4, 87, 87); */
     --highlight-color: white;
-    --darklight-color: black;
+    /* --darklight-color: black; */
     --bg-color: rgb(34, 34, 34);
     --opaque-color: rgb(215, 215, 215);
 }

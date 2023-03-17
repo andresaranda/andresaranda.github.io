@@ -1,0 +1,93 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+            Andres Aranda / Web Developer
+        </title>
+        <script src="https://kit.fontawesome.com/0afa017979.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="./css/projects.css">
+        <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+    </head>
+    <body>
+        <main>
+            <div class="main-grid water-effect">
+                <nav>
+                    <a class="sliding-link liquid-btn" href="mailto:aaranda@pucp.edu.pe">
+                        <div>
+                            <i class="far fa-envelope"></i>
+                        </div>
+                        <div class="slide-out-to-right">&nbsp; aaranda@pucp.edu.pe</div>
+                    </a>
+                    <a class="sliding-link liquid-btn" href="https://github.com/andresaranda">
+                        <div>
+                            <i class="fab fa-github-alt"></i>
+                        </div>
+                        <div class="slide-out-to-right">&nbsp; github.com/andresaranda</div>
+                    </a>
+                    <a class="sliding-link liquid-btn" href="tel:+51-991-099-482">
+                        <div>
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="slide-out-to-right">&nbsp; +51-991-099-482</div>
+                    </a>
+                </nav>
+                <div id="birds">
+                    <img class="bird" id="bird-1" src="./images/clouds.png" alt="">
+                    <img class="bird" id="bird-2" src="./images/clouds.png" alt="">
+                </div>
+                <section id="header">
+                    <h1>Projects</h1>
+                </section>
+                <section id="projects" class="section-grid">
+                    <section id="chess-online" class="section-item">
+                        <h3>Online Multiplayer Chess</h3>
+                        <a href="https://github.com/andresaranda/chess-online">
+                            <div class="video-container liquid-btn">
+                                <img src="./images/chessonline-screenshot.png" alt="Chess online screenshot">
+                                <!-- <video class="video" loop="" src="./images/chessonline-video.mp4" width="auto" height="auto" alt="Imbeded video of chess game in use"></video> -->
+                            </div>
+                        </a>
+                        <p class="description">
+                            Realtime mobile responsive online multiplayer chess game built from scratch with no chess libraries in Javascript with socket.io and node.js. Game engine was built in back-end in <strong>Javascript</strong> with <strong>node.js</strong> and <strong>express</strong>, following principles of clean code, modulation and the MVC model. Front-end was made in vanilla <strong>Javascript</strong>, <strong>CSS</strong> and <strong>HTML</strong> utilizing grid, flexbox and ES6 principles. Front and back end comunication was done through <strong>socket.io</strong> for a realtime responsive design.
+                        </p>
+                        <div class="section-btn-container">
+                            <a href="https://github.com/andresaranda/chess-online">
+                                <div class="section-btn liquid-btn">
+                                    Go to Chess Online
+                                </div>
+                            </a>
+                        </div>
+                    </section>
+                    <section id="punto-gourmet-online" class="section-item">
+                        <h3>Landing Page for Specialty Grocery Store</h3>
+                        <a href="./puntogourmet.html">
+                            <div class="video-container liquid-btn">
+                                <img src="./images/puntogourmet-screenshot.png" alt="Punto Gourmet online screenshot">
+                                <!-- <video class="video" loop="" src="./images/puntogourmet-video.mp4" width="auto" height="auto" alt="Imbeded video of landing page in use"></video> -->
+                            </div>
+                        </a>
+                        <p class="description">
+                            Landing page for a real specialty grocery store made entirely in <strong>Javascript</strong>, <strong>CSS</strong> and <strong>HTML</strong> with a very mobile responsive design. ES6, CSS3 and HTML5 were utilized along with responsive menus and transitions, tailored for different screen sizes. The store's original colors, themes and logo were used as a basis for the design layout.
+                        </p>
+                        <div class="section-btn-container">
+                            <a href="./puntogourmet.html">
+                                <div class="section-btn liquid-btn">
+                                    Go to Punto Gourmet
+                                </div>
+                            </a>
+                        </div>
+                    </section>
+                </section>
+            </div>
+        </main>
+    </body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="./js/jquery.ripples.js"></script>
+    <script type="text/javascript" src="./js/ripples.js"></script>
+    <!-- <script type="text/javascript" src="./js/video-controls.js"></script> -->
+    <!-- <script type="text/javascript" src="./js/lantern.js"></script> -->
+</html>
