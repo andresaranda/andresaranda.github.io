@@ -39,7 +39,7 @@
                     <img class="cloud" id="cloud-1" src="./images/clouds.png" alt="">
                     <img class="cloud" id="cloud-2" src="./images/clouds.png" alt="">
                 </div>
-                <section id="header">
+                <section id="header" class="section-block">
                     <div id="name">
                         <div>A</div>
                         <div>N</div>
@@ -60,17 +60,17 @@
                         <div>Personal Portfolio</div>
                     </div>
                 </section>
-                <section id="intro" class="highlight">
+                <section id="intro" class="highlight section-block">
                     <p class="description">
-                        Hello, my name is Andrés and I'm a proactive web developer with a passion for details and clean code, currently working on million dolar data analytics projects at TASA. I have a solid math and engineering background, am organized, work well with teams, and would love to continue this wonderful experience in the world of programming. I live in Lima, Peru, but was raised in Florida, USA so I am completely bilingual (english and spanish).
+                        Hello, my name is Andrés and I'm a proactive web developer with a passion for details and clean code, currently working on high-value data analytics projects at TASA. I have a solid math and engineering background, am organized, work well with teams, and would love to continue this wonderful experience in the world of programming. I live in Lima, Peru, but was raised in Florida, USA so I am completely bilingual (english and spanish).
                     </p>
                 </section>
             </div>
             <div class="grid-2 lantern_overlay">
-                <section id="projects">
+                <section id="projects" class="section-grid">
                     <h2>Projects</h2>
                     <div class="video-grid">
-                        <section id="chess-online" class="highlight">
+                        <section id="chess-online" class="highlight section-block">
                             <h3>Online Multiplayer Chess</h3>
                             <a href="https://github.com/andresaranda/chess-online">
                                 <div class="video-container liquid-btn">
@@ -79,7 +79,7 @@
                                 </div>
                             </a>
                             <p class="description">
-                                Realtime mobile responsive online multiplayer chess game built from scratch with no chess libraries in Javascript with socket.io and node.js. Game engine was built in back-end in <strong>Javascript</strong> with <strong>node.js</strong> and <strong>express</strong>, following principles of clean code, modulation and the MVC model. Front-end was made in vanilla <strong>Javascript</strong>, <strong>CSS</strong> and <strong>HTML</strong> utilizing grid, flexbox and ES6 principles. Front and back end comunication was done through <strong>socket.io</strong> for a realtime responsive design.
+                                <strong>Real-time</strong> mobile responsive online multiplayer chess game built from scratch with no chess libraries in JavaScript with socket.io. Game engine was built in back-end in <strong>JavaScript</strong> with <strong>node.js</strong> and <strong>express</strong>, following principles of clean code, modulation and the MVC model. Front-end was made in vanilla <strong>JavaScript</strong>, <strong>CSS</strong> and <strong>HTML</strong> utilizing grid, flexbox and ES6 principles. Front and back end comunication was done through <strong>socket.io</strong> for a real-time responsive design.
                             </p>
                             <a href="https://github.com/andresaranda/chess-online">
                                 <div class="simple-btn">
@@ -87,7 +87,7 @@
                                 </div>
                             </a>
                         </section>
-                        <section id="punto-gourmet-online" class="highlight">
+                        <section id="punto-gourmet-online" class="highlight section-block">
                             <h3>Landing Page for Specialty Grocery Store</h3>
                             <a href="./puntogourmet.html">
                                 <div class="video-container liquid-btn">
@@ -96,7 +96,7 @@
                                 </div>
                             </a>
                             <p class="description">
-                                Landing page for a real specialty grocery store made entirely in <strong>Javascript</strong>, <strong>CSS</strong> and <strong>HTML</strong> with a very mobile responsive design. ES6, CSS3 and HTML5 were utilized along with responsive menus and transitions, tailored for different screen sizes. The store's original colors, themes and logo were used as a basis for the design layout.
+                                Landing page for a real specialty grocery store made entirely in <strong>JavaScript</strong>, <strong>CSS</strong> and <strong>HTML</strong> with a very <strong>mobile responsive</strong> design. ES6, CSS3 and HTML5 were utilized along with responsive menus and transitions, tailored for different screen sizes. The store's original colors, themes and logo were used as a basis for the design layout.
                             </p>
                             <a href="./puntogourmet.html">
                                 <div class="simple-btn">
@@ -106,10 +106,29 @@
                         </section>
                     </div>
                 </section>
-                <section id="skills" class="highlight">
+                <section id="experience" class="section-grid">
+                    <h2 class="single-item-section-title">Work Experience</h2>
+                    <section id="tasa" class="highlight section-block">
+                        <h3>Tecnologica de Alimentos S.A. (TASA)</h3>
+                        <h4>
+                            <div>Fullstack Developer Jr.</div>
+                            <div>2022-01 — present</div>
+                        </h4>
+                        <a href="https://www.linkedin.com/company/tasaoficial/mycompany/">
+                            <div class="video-container liquid-btn">
+                                <img src="./images/tasa-photo.png" alt="TASA screenshot" style="margin-top: -20px; margin-bottom: -5px;">
+                                <!-- <video class="video" loop="" src="./images/tasa-video.mp4" width="auto" height="auto" alt="Imbeded video highlighting work done at TASA"></video> -->
+                            </div>
+                        </a>
+                        <p class="description">
+                            Working in a high-performance <strong>Data Analytics</strong> team at TASA, the largest exporter of fish meal and fish oil in the world, I have managed and delivered high-value projects worth several millions of dollars a year utilizing <strong>JavaScript</strong>, <strong>React</strong>, <strong>Python</strong>, <strong>Azure</strong> and <strong>SQL</strong>, encompassing everything from on-site data to <strong>cloud</strong> extraction to real-time user interfaces. Moreover, following the <strong>agile</strong> work methodology, I successfully led an external software team to complete projects ahead of schedule.
+                        </p>
+                    </section>
+                </section>
+                <section id="skills" class="highlight section-block">
                     <h2>Skills</h2>
                     <div id="scramble">
-                        <div class="skill"><div class="skill-importance-1">Javascript</div></div>
+                        <div class="skill"><div class="skill-importance-1">JavaScript</div></div>
                         <div class="skill"><div class="skill-importance-1">Python</div></div>
                         <div class="skill"><div class="skill-importance-3">CSS3</div></div>
                         <div class="skill"><div class="skill-importance-3">HTML5</div></div>
@@ -123,13 +142,13 @@
                         <div class="skill"><div class="skill-importance-3">Jira</div></div>
                     </div>
                 </section>
-                <section id="about" class="highlight">
+                <section id="about" class="highlight section-block">
                     <h2>A little about Me</h2>
                     <p class="description">
-                        I studied engineering at the Pontifical Catholic University of Peru, where I graduated in the 20th percentile, and thoroughly developed my problem solving, analytical and communication skills. I am highly organized and proactive, get along very well with others, and am result oriented, as well as bilingual. On a personal note, I enjoy dancing, paragliding, reading about science and technology, and love animals and volunteering at animal shelters.
+                        I studied engineering at the Pontifical Catholic University of Peru, where I graduated in the 20th percentile, and thoroughly developed my problem solving, analytical and communication skills. I am highly organized and proactive, get along very well with others, and am open-minded and result oriented, as well as bilingual. On a personal note, I enjoy dancing, paragliding, reading about science and technology, and love animals and volunteering at animal shelters.
                     </p>
                 </section>
-                <section id="cv-resume" class="highlight">
+                <section id="cv-resume" class="highlight section-block">
                     <h2>Resume</h2>
                     <p class="description">
                         Here you will find my resume in PDF format

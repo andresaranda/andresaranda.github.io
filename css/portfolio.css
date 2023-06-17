@@ -161,7 +161,7 @@ button:hover {
     }
 }
 
-#projects .simple-btn {
+.section-grid .simple-btn {
     width: 60%;
 }
 #cv-resume .simple-btn {
@@ -172,7 +172,7 @@ body {
     font-family: 'Nunito', sans-serif;
     color: var(--primary-color);
     background-color: var(--bg-color);
-    font-size: 1.3em;
+    font-size: 1.1em;
 }
 body * {
     background-color: transparent;
@@ -181,7 +181,7 @@ body * {
     background-image: url('../images/background-gradient-1.jpg');
     background-size: cover;
     background-repeat: no-repeat;
-    height: 950px;
+    height: 55vw;
 }
 h1 {
     font-weight: normal;
@@ -191,10 +191,13 @@ h2 {
     font-family: 'Montserrat', sans-serif;
 }
 section {
-    border-radius: 20px;
-    padding: 10px 15px;
     overflow: hidden;
     text-align: center;
+}
+.section-block {
+    border-radius: 20px;
+    padding: 10px 15px;
+
 }
 .description {
     text-align: justify;
@@ -212,12 +215,12 @@ section {
     /* position: relative; */
     overflow: hidden;
     color: var(--opaque-color);
-    padding: 100px 6% 0px 3%;
+    padding: 100px 6% 20px 3%;
     margin-left: 90px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-auto-rows: auto;
-    column-gap: 3%;
+    column-gap: 1vw;
     row-gap: 50px;
     justify-items: center;
     align-items: center;
@@ -225,19 +228,30 @@ section {
 #projects {
     grid-column: 1 / 3;
 }
+#experience {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+}
 #skills {
     grid-column: 2 / 3;
     grid-row: 2 / 3;
 }
 #about {
-    grid-column: 1 / 2;
-    grid-row: 2 / 3;
+    grid-column: 1 / 3;
 }
 #cv-resume {
     grid-column: 1 / 3;
 }
 #footer {
     grid-column: 1 / 3;
+}
+#chess-online {
+    grid-column: 2 / 3;
+    grid-row: 1;
+}
+#punto-gourmet-online {
+    grid-column: 1 / 2;
+    grid-row: 1;
 }
 nav {
     position: fixed;
@@ -333,7 +347,7 @@ nav a .slide-out-to-right {
     width: 650px;
     margin: 40px 0px;
 }
-#projects {
+.section-grid {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -344,8 +358,11 @@ nav a .slide-out-to-right {
     grid-auto-rows: auto;
     justify-items: center;
     justify-content: center;
-    column-gap: 7%;
-    margin: 0px 3%;
+    column-gap: 1vw;
+}
+.section-grid .section-block {
+    margin-left: 3vw;
+    margin-right: 3vw;
 }
 .video-container {
     border-radius: 10px;
@@ -357,9 +374,16 @@ nav a .slide-out-to-right {
     width: 100%;
     height: auto;
 }
+.single-item-section-title {
+    margin-top: 30px;
+    margin-bottom: 0px;
+}
+#skills h2 {
+    margin-bottom: 70px;
+}
 #scramble {
     width: 550px;
-    height: 320px;
+    height: 450px;
     position: relative;
     color: var(--primary-color);
 }
@@ -383,8 +407,8 @@ nav a .slide-out-to-right {
     font-size: 0.9em;
 }
 #about {
-    margin-left: 30px;
-    margin-right: 30px;
+    margin-left: 15vw;
+    margin-right: 15vw;
 }
 #about .description {
     text-align: center;
@@ -399,26 +423,15 @@ nav a .slide-out-to-right {
     overflow: visible;
 }
 #cat-img {
-    margin-top: -160px;
-    margin-right: -20px;
+    margin-top: -150px;
+    margin-right: -5px;
     width: 180px;
     height: 120px;
-}
-
-@media(max-width: 1700px){
-    .water-effect {
-        /* background-image: url('../images/background-gradient-1.jpg'); */
-        height: 850px;
-    }
 }
 
 @media(max-width: 1500px){
     body {
         font-size: 1em;
-    }
-    .water-effect {
-        /* background-image: url('../images/background-gradient-1.jpg'); */
-        height: 700px;
     }
     nav a i {
         padding-left: 20px;
@@ -428,7 +441,13 @@ nav a .slide-out-to-right {
     }
     #scramble {
         width: 450px;
-        height: 260px;
+        height: 350px;
+    }
+}
+
+@media(max-width: 1300px){
+    .water-effect {
+        height: 700px;
     }
 }
 
@@ -445,24 +464,28 @@ nav a .slide-out-to-right {
     nav a i {
         padding-left: 20px;
     }
-    .video-grid {
-        margin: 0px;
+    .section-grid .section-block {
+        margin-left: 1.5vw;
+        margin-right: 1.5vw;
     }
     #scramble {
         width: 350px;
-        height: 210px;
+        height: 300px;
     }
     #cat-img {
-        margin-right: -70px;
+        margin-right: -55px;
     }
 }
 
 @media(max-width: 1000px){
+    .water-effect {
+        background-position: -50px;
+    }
     .grid-1 {
         padding: 0px 100px 0px 150px;
     }
     #cat-img {
-        margin-right: -60px;
+        margin-right: -45px;
     }
 }
 
@@ -481,12 +504,12 @@ nav a .slide-out-to-right {
         width: 90%;
     }
     .grid-2 {
-        padding: 40px 10% 0px 5%;
+        padding: 40px 10% 20px 5%;
         margin-left: 90px;
         grid-template-columns: 1fr;
         overflow: visible;
     }
-    #projects, #skills, #about, #cv-resume, #footer {
+    #projects, #experience, #skills, #about, #cv-resume, #footer, #chess-online, #punto-gourmet-online {
         grid-column: auto;
         grid-row: auto;
     }
@@ -502,15 +525,22 @@ nav a .slide-out-to-right {
     #skills {
         width: 80%;
     }
+    #skills h2 {
+        margin-bottom: 30px;
+    }
     #scramble {
         width: 100%;
-        height: 230px;
+        height: 270px;
     }
     #about .description {
         text-align: justify;
     }
+    #about {
+        margin-left: 1.5vw;
+        margin-right: 1.5vw;
+    }
     #cat-img {
-        margin-top: -120px;
+        margin-top: -110px;
         width: 120px;
         height: 80px;
     }
@@ -557,18 +587,11 @@ nav a .slide-out-to-right {
         padding-left: 10%;
         margin-left: 0px;
     }
-    .description, section {
+    .description, .section-block, .section-grid .section-block, #about {
         padding-left: 0px;
         padding-right: 0px;
-    }
-    #about {
         margin-left: 0px;
         margin-right: 0px;
-    }
-    #cat-img {
-        margin-top: -120px;
-        width: 120px;
-        height: 80px;
     }
 }
 
@@ -587,7 +610,7 @@ nav a .slide-out-to-right {
         width: 100%;
     }
     #cat-img {
-        margin-top: -100px;
+        margin-top: -90px;
         margin-right: -40px;
         width: 90px;
         height: 60px;
@@ -622,7 +645,7 @@ nav a .slide-out-to-right {
         width: 100%;
     }
     #cat-img {
-        margin-top: -70px;
+        margin-top: -60px;
         margin-right: -20px;
         width: 90px;
         height: 60px;

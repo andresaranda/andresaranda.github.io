@@ -8,8 +8,6 @@ const skills_list = document.querySelectorAll('#scramble .skill')
 
 // Configuration parameters:
 const num_columns = 3
-const skill_width = 75 //px
-const skill_height = 30 //px
 const max_font_size_growth_factor = 1.4
 const min_font_size_reduce_factor = 0.9
 const minimum_opacity = 0.7
@@ -55,14 +53,16 @@ function scrambleSkills(){
 		skills_list_shuffled.splice(index, 0, skill);
 	})
 	skills_list_shuffled.forEach((skill) => {
-		const x_pos = scramble_loop_position_x + Math.floor(Math.random() * (skill_column_width - skill_width))
-		const y_pos = scramble_loop_position_y + Math.floor(Math.random() * (skill_row_height - skill_height))
+		const current_width = skill.children[0].offsetWidth
+		const current_height = skill.children[0].offsetHeight
+		const x_pos = scramble_loop_position_x + Math.floor(Math.random() * (skill_column_width - current_width))
+		const y_pos = scramble_loop_position_y + Math.floor(Math.random() * (skill_row_height - current_height))
 		const font_size = minimum_font_size + Math.floor(Math.random() * (maximum_font_size - minimum_font_size))
         const opacity_factor = ((font_size - minimum_font_size) / (maximum_font_size - minimum_font_size))
         // const modified_opacity_factor = 1 - (1 - opacity_factor) * (1 - opacity_factor)
 		const opacity = (minimum_opacity + (1 - minimum_opacity) * opacity_factor).toFixed(3)
         skill.style = `left: ${x_pos}px; top: ${y_pos}px; font-size: ${font_size}px; opacity: ${opacity}`
-		if (column_counter < 3){
+		if (column_counter < num_columns){
 			column_counter += 1
 			scramble_loop_position_x += skill_column_width
 		} else {
