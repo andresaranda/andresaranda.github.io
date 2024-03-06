@@ -172,7 +172,7 @@ body {
     font-family: 'Nunito', sans-serif;
     color: var(--primary-color);
     background-color: var(--bg-color);
-    font-size: 1.1em;
+    font-size: 1em;
 }
 body * {
     background-color: transparent;
@@ -431,7 +431,7 @@ nav a .slide-out-to-right {
 
 @media(max-width: 1500px){
     body {
-        font-size: 1em;
+        font-size: 0.9em;
     }
     nav a i {
         padding-left: 20px;
