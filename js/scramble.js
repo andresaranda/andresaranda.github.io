@@ -1,7 +1,11 @@
 
-// gem game
-// liquid button
-// videos
+//TODO gem game
+//TODO shining pointer in dark side
+//TODO liquid button
+//TODO videos/image carusel
+//TODO add more skills
+//TODO change main layout
+//TODO implement lazy loading for images
 
 const skills_container = document.querySelector('#scramble')
 const skills_list = document.querySelectorAll('#scramble .skill')

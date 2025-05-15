@@ -225,19 +225,19 @@ section {
     justify-items: center;
     align-items: center;
 }
+#experience {
+    grid-column: 1 / 3;
+}
 #projects {
     grid-column: 1 / 3;
 }
-#experience {
+#about {
     grid-column: 1 / 2;
-    grid-row: 2 / 3;
+    grid-row: 3 / 4;
 }
 #skills {
     grid-column: 2 / 3;
-    grid-row: 2 / 3;
-}
-#about {
-    grid-column: 1 / 3;
+    grid-row: 3 / 4;
 }
 #cv-resume {
     grid-column: 1 / 3;
@@ -245,14 +245,22 @@ section {
 #footer {
     grid-column: 1 / 3;
 }
-#chess-online {
+#tasa-technical-lead {
     grid-column: 2 / 3;
     grid-row: 1;
 }
-#punto-gourmet-online {
+#tasa-fullstack-developer {
     grid-column: 1 / 2;
     grid-row: 1;
 }
+/* #chess-online {
+    grid-column: 2 / 3;
+    grid-row: 1;
+} */
+/* #punto-gourmet-online {
+    grid-column: 1 / 2;
+    grid-row: 1;
+} */
 nav {
     position: fixed;
     top: 0px;
@@ -407,8 +415,10 @@ nav a .slide-out-to-right {
     font-size: 0.9em;
 }
 #about {
-    margin-left: 15vw;
-    margin-right: 15vw;
+    margin-left: 1.5vw;
+    margin-right: 1.5vw;
+    /* margin-left: 15vw; */
+    /* margin-right: 15vw; */
 }
 #about .description {
     text-align: center;
@@ -509,7 +519,8 @@ nav a .slide-out-to-right {
         grid-template-columns: 1fr;
         overflow: visible;
     }
-    #projects, #experience, #skills, #about, #cv-resume, #footer, #chess-online, #punto-gourmet-online {
+    #projects, #experience, #skills, #about, #cv-resume, #footer, #chess-online, #stock-distribution
+    , #tasa-technical-lead, #tasa-fullstack-developer {
         grid-column: auto;
         grid-row: auto;
     }
