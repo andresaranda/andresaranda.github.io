@@ -1,253 +1,262 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>
-            Punto Gourmet
-        </title>
+        <title>Punto Gourmet</title>
         <script src="https://kit.fontawesome.com/0afa017979.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="./css/puntogourmet.css">
         <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
     </head>
     <body>
         <header>
-            <div id="portfolio-links">
-                <div id="portfolio-name">
-                    <div class="portfolio-closed">
-                        <div>Contact</div>
-                        <div>Developer</div>
-                    </div>
-                    <div class="portfolio-opened">
-                        <div class="small">Made by</div>
-                        <div>Andres Aranda</div>
-                        <a class="small" href="mailto:aaranda@pucp.edu.pe">aaranda@pucp.edu.pe</a>
-                    </div>
-                </div>
-                <div id="portfolio-icons">
-                    <a href="mailto:aaranda@pucp.edu.pe">
-                        <i class="far fa-envelope"></i>
-                    </a>
-                    <a href="tel:+51-991-099-482">
-                        <i class="fas fa-phone-alt"></i>
-                    </a>
-                    <a href="./">
-                        <i class="fab fa-github-alt"></i>
-                    </a>
-                </div>
-            </div>
-            <div id="t-inicio"></div>
-            <div id="bar-top">
-                <div id="bar-top-left">
-                    <div id="bar-top-left-name">
-                        PEDIDOS:
-                    </div>
-                    <a class="bar-top-link highlight-link"  href="tel:+51-1-273-8264">
-                        <i class="fas fa-phone-alt bar-top-icon-1"></i>
-                        <div>01-273-8264</div>
-                    </a>
-                    <a class="bar-top-link highlight-link" href="https://wa.me/51977590173">
-                        <i class="fab fa-whatsapp bar-top-icon-2"></i>
-                        <div>977-590-173</div>
-                    </a>
-                </div>
-                <div id="bar-top-right">
-                    <a class="highlight-link"  href="https://goo.gl/maps/wupUmQEfnXNxNQ4c6">
-                        SIMÓN SALGUERO 507, SANTIAGO DE SURCO
-                    </a> 
-                </div>
-                
-            </div>
-            <div class="centered" id="logo-top">
-                <div>
-                    <img id="logo-top-main" src="./images/logo-nobg-reg-med.png" alt="Punto Gourmet" height="" width="">
-                    <img id="logo-top-dot" src="./images/logo-dot-sm.png" alt="">
-                </div>
-            </div>
-            <nav id="nav-under-logo">
-                <div id="nav-toggle">
-                    <div class="hamburger-btn"></div>
-
-                    <div class="hamburger-bars">
-                        <span id="ham-bar-1" class="ham-bar"></span>
-                        <span id="ham-bar-2" class="ham-bar"></span>
-                        <span id="ham-bar-3" class="ham-bar"></span> 
+            <nav class="site-nav" id="site-nav" aria-label="Principal">
+                <div class="site-nav-inner" id="nav-toggle">
+                    <div class="nav-menu">
+                        <button type="button" class="hamburger-btn" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-list"></button>
+                        <div class="hamburger-bars" aria-hidden="true">
+                            <span id="ham-bar-1" class="ham-bar"></span>
+                            <span id="ham-bar-2" class="ham-bar"></span>
+                            <span id="ham-bar-3" class="ham-bar"></span>
+                        </div>
+                        <ul id="nav-list">
+                            <li>
+                                <a class="nav-link highlight-link" href="#t-inicio">INICIO</a>
+                            </li>
+                            <li>
+                                <a class="nav-link highlight-link" href="#t-productos">PRODUCTOS</a>
+                            </li>
+                            <li>
+                                <a class="nav-link highlight-link" href="#t-canastas">CANASTAS</a>
+                            </li>
+                            <li>
+                                <a class="nav-link highlight-link" href="#t-tablas">TABLAS</a>
+                            </li>
+                            <li>
+                                <a class="nav-link highlight-link" href="#t-nosotros">NOSOTROS</a>
+                            </li>
+                            <li>
+                                <a class="nav-link highlight-link" href="#t-visitanos">UBICACIÓN</a>
+                            </li>
+                        </ul>
                     </div>
 
-                    <ul id="nav-list">
-                        <a class="nav-under-logo-link highlight-link" href="#t-inicio">
-                            INICIO
+                    <div class="nav-center">
+                        <a class="nav-address highlight-link" href="https://goo.gl/maps/wupUmQEfnXNxNQ4c6">
+                            SIMÓN SALGUERO 507, SANTIAGO DE SURCO
                         </a>
-                        <a class="nav-under-logo-link highlight-link" href="#t-productos">
-                            PRODUCTOS
+                        <a class="nav-brand" href="#t-inicio" aria-label="Punto Gourmet">
+                            <img
+                                class="nav-brand-logo"
+                                src="./images/logo-nobg-wht-med.png"
+                                alt=""
+                                width="590"
+                                height="158">
                         </a>
-                        <a class="nav-under-logo-link highlight-link" href="#t-canastas">
-                            CANASTAS
+                    </div>
+
+                    <div class="nav-contacts">
+                        <a class="nav-contact highlight-link" href="tel:+51-1-273-8264" aria-label="Llamar al 01-273-8264">
+                            <i class="fas fa-phone-alt" aria-hidden="true"></i>
+                            <span class="nav-contact-label">01-273-8264</span>
                         </a>
-                        <a class="nav-under-logo-link highlight-link" href="#t-tablas">
-                            TABLAS
+                        <a class="nav-contact highlight-link" href="https://wa.me/51977590173" aria-label="WhatsApp 977-590-173">
+                            <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                            <span class="nav-contact-label">977-590-173</span>
                         </a>
-                        <a class="nav-under-logo-link highlight-link" href="#t-nosotros">
-                            NOSOTROS
-                        </a>
-                        <a class="nav-under-logo-link highlight-link" href="#t-visitanos">
-                            UBICACIÓN
-                        </a>
-                    </ul>
-                    <div></div>
-                    <a id="nav-contact-link-1" class="nav-contact-link highlight-link hidden"  href="tel:+51-1-273-8264">
-                        <i class="fas fa-phone-alt bar-top-icon-1"></i>
-                    </a>
-                    <a id="nav-contact-link-2" class="nav-contact-link highlight-link hidden" href="https://wa.me/151977590173">
-                        <i class="fab fa-whatsapp bar-top-icon-2"></i>
-                    </a>
+                    </div>
                 </div>
             </nav>
-        </header>
-        <main>
-            <div>
-                <div class="centered image-block cursive" id="image-top">
-                    <div class="overlay">
-                        <h1>
-                            <!-- Todo lo que necesitas para los momentos que importan -->
-                            Quesos, embutidos, vinos, tablas, canastas de regalo y mucho más
-                        </h1>
+
+            <section class="hero" id="t-inicio" aria-label="Inicio">
+                <picture class="hero-bg">
+                    <source
+                        type="image/webp"
+                        srcset="./images/img-bg-3-1280.webp 1280w, ./images/img-bg-3-1920.webp 1920w"
+                        sizes="100vw">
+                    <img
+                        src="./images/img-bg-3-1920.jpg"
+                        alt=""
+                        width="1920"
+                        height="1280"
+                        fetchpriority="high"
+                        decoding="async">
+                </picture>
+                <div class="hero-scrim" aria-hidden="true"></div>
+
+                <div class="hero-content">
+                    <img
+                        class="hero-logo"
+                        src="./images/logo-nobg-wht-med.png"
+                        alt="Punto Gourmet"
+                        width="590"
+                        height="158">
+                    <h1 class="hero-slogan display">
+                        Pequeños detalles, grandes encuentros
+                    </h1>
+                    <div class="hero-ctas">
+                        <a class="cta cta-whatsapp" href="https://wa.me/51977590173">
+                            Pedir por WhatsApp
+                        </a>
+                        <a class="cta cta-visit" href="#t-visitanos">
+                            Visítanos
+                        </a>
                     </div>
                 </div>
-                <div class="centered">
-                    <img class="separator-curves" src="./images/logo-curves-ext-dot-lg.png" alt="" height="" width="">
-                </div>
-            </div>
-            <section>
+            </section>
+        </header>
+
+        <main>
+            <section class="content-section">
                 <h2 class="centered subtitle fade-in" id="t-productos">
-                    NUESTROS PRODUCTOS
+                    Nuestros productos
                 </h2>
                 <div class="circular-image-grid centered">
-                    <div class="fade-in">
-                        <img src="./images/img-home-canastas.jpg" alt="Canastas" height="225" width="225">
-                        <div>CANASTAS DE REGALO</div>
-                    </div>
-                    <div class="fade-in">
-                        <img src="./images/img-home-tablas.jpg" alt="Tablas" height="225" width="225">
-                        <div>TABLAS DE QUESOS</div>
-                    </div>
-                    <div class="fade-in">
-                        <img src="./images/img-home-piqueo.jpg" alt="Piqueo" height="225" width="225">
-                        <div>PIQUEO</div>
-                    </div>
-                    <div class="fade-in">
-                        <img src="./images/img-home-vinos.jpg" alt="Vinos" height="225" width="225">
-                        <div>VINOS</div>
-                    </div>
-                    <div class="fade-in">
-                        <img src="./images/img-home-productos.jpg" alt="Todos nuestros productos" height="225" width="225">
-                        <div>COMIDA GOURMET</div>
-                    </div>
+                    <a class="category-link fade-in" href="#t-canastas">
+                        <picture>
+                            <source type="image/webp" srcset="./images/img-home-canastas-450.webp">
+                            <img src="./images/img-home-canastas-450.jpg" alt="Canastas de regalo" width="225" height="225" loading="lazy" decoding="async">
+                        </picture>
+                        <span>Canastas de regalo</span>
+                    </a>
+                    <a class="category-link fade-in" href="#t-tablas">
+                        <picture>
+                            <source type="image/webp" srcset="./images/img-home-tablas-450.webp">
+                            <img src="./images/img-home-tablas-450.jpg" alt="Tablas de quesos" width="225" height="225" loading="lazy" decoding="async">
+                        </picture>
+                        <span>Tablas de quesos</span>
+                    </a>
+                    <a class="category-link fade-in" href="#t-visitanos">
+                        <picture>
+                            <source type="image/webp" srcset="./images/img-home-piqueo-450.webp">
+                            <img src="./images/img-home-piqueo-450.jpg" alt="Piqueo" width="225" height="225" loading="lazy" decoding="async">
+                        </picture>
+                        <span>Piqueo</span>
+                    </a>
+                    <a class="category-link fade-in" href="#t-visitanos">
+                        <picture>
+                            <source type="image/webp" srcset="./images/img-home-vinos-450.webp">
+                            <img src="./images/img-home-vinos-450.jpg" alt="Vinos" width="225" height="225" loading="lazy" decoding="async">
+                        </picture>
+                        <span>Vinos</span>
+                    </a>
+                    <a class="category-link fade-in" href="#t-visitanos">
+                        <picture>
+                            <source type="image/webp" srcset="./images/img-home-productos-450.webp">
+                            <img src="./images/img-home-productos-450.jpg" alt="Comida gourmet" width="225" height="225" loading="lazy" decoding="async">
+                        </picture>
+                        <span>Comida gourmet</span>
+                    </a>
                 </div>
-                <div class="fade-in">
-                    <p class="centered text-block cursive">
-                        Productos de calidad seleccionados: variedad de quesos & embutidos nacionales e importados, dips & chips para piqueo, bocaditos, postres, helados artesanales, panes de masa madre, pastas, y vinos europeos
-                    </p>
-                    <div class="centered">
-                        <img class="separator-curves" src="./images/logo-curves-ext-dot-lg.png" alt="" height="" width="">
-                    </div>
-                </div>
+                <p class="centered text-block fade-in">
+                    Productos de calidad seleccionados: quesos y embutidos nacionales e importados, dips y chips para piqueo, bocaditos, postres, helados artesanales, panes de masa madre, pastas y vinos europeos.
+                </p>
             </section>
-            <section class="fade-in">
-                <h2 class="centered subtitle" id="t-canastas">
-                    CANASTAS LISTAS & PERSONALIZADAS
+
+            <section class="feature-section content-section fade-in" id="t-canastas">
+                <h2 class="centered subtitle">
+                    Canastas listas &amp; personalizadas
                 </h2>
-                <div class="centered image-block cursive" id="image-canastas">
-                    <div class="overlay">
-                        <p class="text-over-img">
-                            Canastas gourmet para toda ocasión. Escoge de nuestra selección, modifícala a tu gusto o pide una de nuestras canastas personalizadas para que sea el regalo ideal. Canastas corporativas a pedido.
+                <div class="feature-grid feature-grid--featured">
+                    <picture class="feature-media">
+                        <source type="image/webp" srcset="./images/img-bg-1-900.webp 900w, ./images/img-bg-1-1280.webp 1280w" sizes="(max-width: 855px) 100vw, 55vw">
+                        <img src="./images/img-bg-1-900.jpg" alt="Canasta gourmet de regalo" width="900" height="600" loading="lazy" decoding="async">
+                    </picture>
+                    <div class="feature-copy">
+                        <p>
+                            Canastas gourmet para toda ocasión. Escoge de nuestra selección, modifícala a tu gusto o pide una personalizada para que sea el regalo ideal. Canastas corporativas a pedido.
                         </p>
                     </div>
                 </div>
-                <p class="centered text-block cursive" id="image-canastas-text"></p>
-                <div class="centered">
-                    <img class="separator-curves" src="./images/logo-curves-ext-dot-lg.png" alt="" height="" width="">
-                </div>
             </section>
-            <section class="fade-in">
-                <h2 class="centered subtitle" id="t-tablas">
-                    TABLAS DE QUESOS IMPORTADOS & NACIONALES
+
+            <section class="feature-section content-section fade-in" id="t-tablas">
+                <h2 class="centered subtitle">
+                    Tablas de quesos importados &amp; nacionales
                 </h2>
-                <div class="centered image-block cursive" id="image-tablas">
-                    <div class="overlay">
-                        <p class="text-over-img">
-                            Tablas de piqueo con productos de calidad. Elige entre nuestras opciones o pide una a tu medida
+                <div class="feature-grid feature-grid--compact feature-grid--reverse">
+                    <picture class="feature-media">
+                        <source type="image/webp" srcset="./images/img-bg-2-900.webp 900w, ./images/img-bg-2-1280.webp 1280w" sizes="(max-width: 855px) 100vw, 45vw">
+                        <img src="./images/img-bg-2-900.jpg" alt="Tabla de quesos y embutidos" width="900" height="600" loading="lazy" decoding="async">
+                    </picture>
+                    <div class="feature-copy">
+                        <p>
+                            Tablas de piqueo con productos de calidad. Elige entre nuestras opciones o pide una a tu medida.
                         </p>
                     </div>
                 </div>
-                <p class="centered text-block cursive" id="image-tablas-text"></p>
-                <div class="centered">
-                    <img class="separator-curves" src="./images/logo-curves-ext-dot-lg.png" alt="" height="" width="">
-                </div>
             </section>
-            <section class="fade-in">
-                <h2 class="centered subtitle" id="t-nosotros">
-                    NOSOTROS
+
+            <section class="feature-section content-section fade-in" id="t-nosotros">
+                <h2 class="centered subtitle">
+                    Nosotros
                 </h2>
-                <div class="centered image-block cursive" id="image-nosotros">
-                    <div class="overlay">
-                        <p class="text-over-img">
-                            Somos un pequeño negocio familiar orgullosos de tener, en nuestros 7 años en funcionamiento, clientes que confíen una y otra vez en nosotros. Por ello, nos esmeramos por brindar la mejor calidad de servicio que podemos, tanto en nuestra atención, como en los productos que vendemos. Cuando compras en Punto Gourmet, siempre sales con una sonrisa.
-                            <!-- Somos un pequeño negocio familiar orgullosos de tener, en nuestros 7 años en funcionamiento, clientes que confíen una y otra vez en nosotros siempre que tienen un compromiso que cumplir, necesitan un regalo especial o simplemente quieren darse un gusto fino. Nos esmeramos por brindar la mejor calidad de servicio que podemos, tanto en nuestra atención, como en los productos que vendemos. Cuando compras en Punto Gourmet, siempre sales con una sonrisa, solo pregúntele a nuestros clientes. -->
+                <div class="feature-grid feature-grid--story">
+                    <picture class="feature-media">
+                        <source type="image/webp" srcset="./images/img-bg-4-900.webp 900w, ./images/img-bg-4-1280.webp 1280w" sizes="(max-width: 855px) 100vw, 42vw">
+                        <img src="./images/img-bg-4-900.jpg" alt="Interior y productos de Punto Gourmet" width="900" height="600" loading="lazy" decoding="async">
+                    </picture>
+                    <div class="feature-copy">
+                        <p>
+                            Somos un negocio familiar con 7 años acompañando a clientes que vuelven una y otra vez. Cuidamos la atención y la calidad de cada producto: cuando compras en Punto Gourmet, sales con una sonrisa.
                         </p>
                     </div>
                 </div>
-                <p class="centered text-block cursive" id="image-nosotros-text"></p>
-                <div class="centered">
-                    <img class="separator-curves" src="./images/logo-curves-ext-dot-lg.png" alt="" height="" width="">
-                </div>
             </section>
-            <section class="fade-in">
+
+            <section class="content-section visit-section fade-in">
                 <h2 class="centered subtitle" id="t-visitanos">
-                    VISÍTANOS
+                    Visítanos
                 </h2>
                 <div class="two-column-block">
-                    <div class="centered">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3900.7345964210167!2d-77.01075568518661!3d-12.130302991411682!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105b8006bf6df4d%3A0xbad9e659550ad767!2sPunto%20Gourmet!5e0!3m2!1ses-419!2spe!4v1629149430980!5m2!1ses-419!2spe" width="400" height="300" allowfullscreen="" loading="lazy" id="map-google"></iframe>
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3900.7345964210167!2d-77.01075568518661!3d-12.130302991411682!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105b8006bf6df4d%3A0xbad9e659550ad767!2sPunto%20Gourmet!5e0!3m2!1sen!2spe!4v1634159334579!5m2!1sen!2spe" width="300" height="300" allowfullscreen="" loading="lazy" id="map-google-alt"></iframe>
-                        <!-- <iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.openstreetmap.org/export/embed.html?bbox=-77.02051162719728%2C-12.136235992161%2C-76.9965648651123%2C-12.124278205072756&amp;layer=mapnik&amp;marker=-12.130257165666105%2C-77.00853824615479" style="border: 1px solid black"></iframe><br/><small><a id="map-open" href="https://www.openstreetmap.org/?mlat=-12.1303&amp;mlon=-77.0085#map=16/-12.1303/-77.0085&amp;layers=N">VER EN MAPA</a></small> -->
+                    <div class="centered map-wrap">
+                        <iframe
+                            title="Ubicación de Punto Gourmet en Google Maps"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3900.7345964210167!2d-77.01075568518661!3d-12.130302991411682!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105b8006bf6df4d%3A0xbad9e659550ad767!2sPunto%20Gourmet!5e0!3m2!1ses-419!2spe!4v1629149430980!5m2!1ses-419!2spe"
+                            width="400"
+                            height="300"
+                            allowfullscreen=""
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"
+                            id="map-google"></iframe>
                     </div>
                     <div id="home-location-text">
-                        Calle Simón Salguero 507, Santiago de Surco, Lima, Perú
-                        <br>
-                        <br>
-                        <span id="open-hours-1">
-                            Horario:
-                            <ul style="margin-top: 0px;">
-                                <li>Lunes: &nbsp 10:00 AM a 7:00 PM</li>
-                                <li>Martes: &nbsp 10:00 AM a 7:00 PM</li>
-                                <li>Miércoles: &nbsp 10:00 AM a 7:00 PM</li>
-                                <li>Jueves: &nbsp 10:00 AM a 7:00 PM</li>
-                                <li>Viernes: &nbsp 10:00 AM a 7:00 PM</li>
-                                <li>Sábado: &nbsp 10:00 AM a 7:00 PM</li>
+                        <p class="location-address">
+                            Calle Simón Salguero 507, Santiago de Surco, Lima, Perú
+                        </p>
+                        <div id="open-hours-1">
+                            <p class="hours-label">Horario</p>
+                            <ul class="hours-list">
+                                <li><span>Lunes</span><span>10:00 AM — 7:00 PM</span></li>
+                                <li><span>Martes</span><span>10:00 AM — 7:00 PM</span></li>
+                                <li><span>Miércoles</span><span>10:00 AM — 7:00 PM</span></li>
+                                <li><span>Jueves</span><span>10:00 AM — 7:00 PM</span></li>
+                                <li><span>Viernes</span><span>10:00 AM — 7:00 PM</span></li>
+                                <li><span>Sábado</span><span>10:00 AM — 7:00 PM</span></li>
                             </ul>
-                        </span>
-                        <span id="open-hours-2">
+                        </div>
+                        <p id="open-hours-2">
                             Horario: Lunes a Sábado de 10:00 AM a 7:00 PM
-                        </span>
-                        <br>
-                        <span class="cursive">
-                            Delivery en mismo día a distritos aledaños según disponibilidad
-                        </span>
+                        </p>
+                        <p class="delivery-note">
+                            Delivery el mismo día a distritos aledaños según disponibilidad.
+                        </p>
                     </div>
                 </div>
-                <div class="centered">
-                    <img class="separator-curves" src="./images/logo-curves-ext-dot-lg.png" alt="" height="" width="">
-                    <br/>
+                <div class="visit-close">
+                    <p>¿Listo para armar tu pedido?</p>
+                    <a class="cta cta-whatsapp cta-whatsapp--solid" href="https://wa.me/51977590173">
+                        Pedir por WhatsApp
+                    </a>
                 </div>
             </section>
         </main>
+
         <footer>
             <div id="foot-start">
                 <a id="logo-foot" href="#t-inicio">
-                    <img src="./images/logo-nobg-reg-med.png" alt="" height="60">
+                    <img src="./images/logo-nobg-wht-med.png" alt="Punto Gourmet" width="224" height="60">
                 </a>
                 <br>
                 <a class="small highlight-link" href="#t-nosotros">
@@ -256,29 +265,29 @@
             </div>
             <div class="foot-middle">
                 <div>
-                    CONTÁCTANOS
+                    Contáctanos
                 </div>
                 <br>
                 <div class="foot-grid-1">
                     <a class="foot-grid-2 highlight-link" href="tel:+51-1-273-8264">
                         <div class="small">
-                            <i class="fas fa-phone-alt foot-icon-1"></i>
+                            <i class="fas fa-phone-alt foot-icon-1" aria-hidden="true"></i>
                         </div>
                         <div class="small">
-                            Teléfono: &nbsp 273-8264
+                            Teléfono: &nbsp; 273-8264
                         </div>
                     </a>
-                    <a class="foot-grid-2 highlight-link" href="https://wa.me/151977590173">
+                    <a class="foot-grid-2 highlight-link" href="https://wa.me/51977590173">
                         <div class="small">
-                            <i class="fab fa-whatsapp foot-icon-1"></i>
+                            <i class="fab fa-whatsapp foot-icon-1" aria-hidden="true"></i>
                         </div>
                         <div class="small">
-                            Whatsapp: &nbsp 977-590-173
+                            Whatsapp: &nbsp; 977-590-173
                         </div>
                     </a>
                     <a class="foot-grid-2 highlight-link" href="mailto:contactopuntogourmet@gmail.com">
                         <div class="small">
-                            <i class="far fa-envelope foot-icon-1"></i>
+                            <i class="far fa-envelope foot-icon-1" aria-hidden="true"></i>
                         </div>
                         <div class="small">
                             contactopuntogourmet@gmail.com
@@ -288,13 +297,13 @@
             </div>
             <div class="foot-middle">
                 <div>
-                    SUÍGUENOS
+                    Síguenos
                 </div>
                 <br>
                 <div class="foot-grid-1">
-                    <a class="foot-grid-2 highlight-link" href="http://www.facebook.com/puntogourmetperu">
+                    <a class="foot-grid-2 highlight-link" href="https://www.facebook.com/puntogourmetperu">
                         <div class="small">
-                            <i class="fab fa-facebook foot-icon-1"></i>
+                            <i class="fab fa-facebook foot-icon-1" aria-hidden="true"></i>
                         </div>
                         <div class="small">
                             @facebook.com/puntogourmetperu
@@ -302,7 +311,7 @@
                     </a>
                     <a class="foot-grid-2 highlight-link" href="https://www.instagram.com/puntogourmetperu">
                         <div class="small">
-                            <i class="fab fa-instagram foot-icon-1"></i>
+                            <i class="fab fa-instagram foot-icon-1" aria-hidden="true"></i>
                         </div>
                         <div class="small">
                             @instagram.com/puntogourmetperu
@@ -315,8 +324,11 @@
                     Calle Simón Salguero 507, Santiago de Surco, Lima, Perú <br>
                     Lunes a Sábado de 10:00 AM a 7:00 PM
                 </div>
+                <p class="site-credit small">
+                    Work by <a class="highlight-link" href="./">Andrés Aranda</a>
+                </p>
             </div>
         </footer>
+        <script type="text/javascript" src="./js/interact.js"></script>
     </body>
-    <script type="text/javascript" src="./js/interact.js"></script>
 </html>
