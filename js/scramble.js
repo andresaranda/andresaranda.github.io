@@ -1,14 +1,17 @@
+// Unused on the live page for now — skills are a static grouped list.
+// Kept for future cave atmosphere easter eggs.
 
-//TODO gem game
+//TODO gem game (pairs with future fairy / lantern cursor light)
 //TODO shining pointer in dark side
 //TODO liquid button
-//TODO videos/image carusel
-//TODO add more skills
-//TODO change main layout
-//TODO implement lazy loading for images
+//TODO videos
 
 const skills_container = document.querySelector('#scramble')
 const skills_list = document.querySelectorAll('#scramble .skill')
+
+if (!skills_container || skills_list.length === 0) {
+	// Page no longer mounts the scramble mount point.
+}
 
 // Configuration parameters:
 const num_columns = 3
@@ -21,6 +24,9 @@ let maximum_font_size
 let minimum_font_size
 
 function setFontSizes(){
+	if (!skills_container) {
+		return
+	}
 	const current_font_size = parseInt(window.getComputedStyle(skills_container)['fontSize'].slice(0,-2))
 	maximum_font_size = Math.round(current_font_size * max_font_size_growth_factor)
 	minimum_font_size = Math.round(current_font_size * min_font_size_reduce_factor)
@@ -32,6 +38,9 @@ let skill_column_width
 let skill_row_height
 
 function setScrambleGridDimensions(){
+	if (!skills_container) {
+		return
+	}
     let container_width = window.getComputedStyle(skills_container).getPropertyValue('width')
     let container_height = window.getComputedStyle(skills_container).getPropertyValue('height')
     skill_column_width = parseInt(container_width.slice(0,-2)) / num_columns
@@ -49,6 +58,9 @@ let scramble_loop_position_y = 0
 let column_counter = 1
 
 function scrambleSkills(){
+	if (!skills_container || skills_list.length === 0) {
+		return
+	}
 	const skills_list_shuffled = []
 	let skills_counter = 0
 	skills_list.forEach((skill) => {
@@ -63,7 +75,6 @@ function scrambleSkills(){
 		const y_pos = scramble_loop_position_y + Math.floor(Math.random() * (skill_row_height - current_height))
 		const font_size = minimum_font_size + Math.floor(Math.random() * (maximum_font_size - minimum_font_size))
         const opacity_factor = ((font_size - minimum_font_size) / (maximum_font_size - minimum_font_size))
-        // const modified_opacity_factor = 1 - (1 - opacity_factor) * (1 - opacity_factor)
 		const opacity = (minimum_opacity + (1 - minimum_opacity) * opacity_factor).toFixed(3)
         skill.style = `left: ${x_pos}px; top: ${y_pos}px; font-size: ${font_size}px; opacity: ${opacity}`
 		if (column_counter < num_columns){
@@ -80,6 +91,8 @@ function scrambleSkills(){
 	column_counter = 1
 }
 
-scrambleSkills()
-const timeoutID = window.setTimeout(scrambleSkills, 0);
-const intervalID = window.setInterval(scrambleSkills, interval * 1000);
+if (skills_container && skills_list.length > 0) {
+	scrambleSkills()
+	window.setTimeout(scrambleSkills, 0);
+	window.setInterval(scrambleSkills, interval * 1000);
+}
