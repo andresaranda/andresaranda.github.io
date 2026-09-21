@@ -1,9 +1,9 @@
 /**
  * Selected work stage:
  * Desktop — sticky feature panel tracks the rail item nearest viewport center.
- * Mobile — rail items expand on tap; thumb swaps to the carousel.
- * Feature / rail media — infinite side-sliding carousel (always advances right);
- * timer pauses while hovered.
+ * Mobile — rail items expand on tap; thumb fades into the carousel.
+ * Carousel — infinite side-slide; pause on hover/hold; swipe on touch;
+ * desktop dots jump to a slide.
  */
 
 const MOBILE_QUERY = '(max-width: 890px)';
@@ -26,13 +26,17 @@ function createCarousel(root) {
 		return null;
 	}
 
+	const realCount = originals.length;
+	const lastClone = originals[realCount - 1].cloneNode(true);
 	const firstClone = originals[0].cloneNode(true);
+	lastClone.alt = '';
 	firstClone.alt = '';
+	lastClone.setAttribute('aria-hidden', 'true');
 	firstClone.setAttribute('aria-hidden', 'true');
+	track.insertBefore(lastClone, originals[0]);
 	track.appendChild(firstClone);
 
 	const slides = Array.from(track.querySelectorAll('img'));
-	const realCount = originals.length;
 	const total = slides.length;
 	const slidePercent = 100 / total;
 
@@ -42,19 +46,65 @@ function createCarousel(root) {
 		slide.style.flex = `0 0 ${slidePercent}%`;
 	});
 
-	let index = 0;
+	const dots = document.createElement('div');
+	dots.className = 'work-carousel-dots';
+	dots.setAttribute('role', 'tablist');
+	dots.setAttribute('aria-label', 'Project images');
+
+	const dotButtons = originals.map((_, slideIndex) => {
+		const button = document.createElement('button');
+		button.type = 'button';
+		button.className = 'work-carousel-dot';
+		button.setAttribute('aria-label', `Show image ${slideIndex + 1}`);
+		button.addEventListener('click', (event) => {
+			event.preventDefault();
+			event.stopPropagation();
+			goTo(slideIndex);
+		});
+		dots.appendChild(button);
+		return button;
+	});
+
+	root.insertAdjacentElement('afterend', dots);
+
+	// Index 0 is a clone of the last slide; 1..realCount are real; last is a clone of the first
+	let index = 1;
 	let timerId = 0;
 	let paused = false;
 	let running = false;
+	let touchStartX = 0;
+	let touchStartY = 0;
+	let touching = false;
+	let dragAxis = null;
+	let didSwipe = false;
 
 	const clearTimer = () => {
 		window.clearTimeout(timerId);
 		timerId = 0;
 	};
 
+	const activeSlideIndex = () => {
+		if (index <= 0) {
+			return realCount - 1;
+		}
+		if (index > realCount) {
+			return 0;
+		}
+		return index - 1;
+	};
+
+	const updateDots = () => {
+		const active = activeSlideIndex();
+		dotButtons.forEach((button, slideIndex) => {
+			button.classList.toggle('is-active', slideIndex === active);
+			button.setAttribute('aria-selected', slideIndex === active ? 'true' : 'false');
+		});
+	};
+
 	const apply = (withTransition) => {
 		track.style.transition = withTransition ? CAROUSEL_TRANSITION : 'none';
 		track.style.transform = `translateX(-${index * slidePercent}%)`;
+		updateDots();
 	};
 
 	const schedule = () => {
@@ -74,13 +124,26 @@ function createCarousel(root) {
 		apply(true);
 	};
 
+	const goTo = (slideIndex) => {
+		clearTimer();
+		index = Math.max(0, Math.min(slideIndex, realCount - 1)) + 1;
+		apply(true);
+		if (running && !paused) {
+			schedule();
+		}
+	};
+
 	const onTransitionEnd = (event) => {
 		if (event.target !== track || event.propertyName !== 'transform') {
 			return;
 		}
 
-		if (index >= realCount) {
-			index = 0;
+		if (index <= 0) {
+			index = realCount;
+			apply(false);
+			void track.offsetHeight;
+		} else if (index > realCount) {
+			index = 1;
 			apply(false);
 			void track.offsetHeight;
 		}
@@ -122,12 +185,19 @@ function createCarousel(root) {
 
 	const reset = () => {
 		clearTimer();
-		index = 0;
+		index = 1;
 		apply(false);
 		void track.offsetHeight;
 		if (running && !paused) {
 			schedule();
 		}
+	};
+
+	const slideWidth = () => root.clientWidth || 1;
+
+	const setDragPosition = (dx) => {
+		track.style.transition = 'none';
+		track.style.transform = `translateX(${-index * slideWidth() + dx}px)`;
 	};
 
 	const isRunning = () => running;
@@ -141,9 +211,97 @@ function createCarousel(root) {
 		}
 	});
 
+	root.addEventListener(
+		'touchstart',
+		(event) => {
+			if (event.touches.length !== 1) {
+				return;
+			}
+			touching = true;
+			dragAxis = null;
+			didSwipe = false;
+			touchStartX = event.touches[0].clientX;
+			touchStartY = event.touches[0].clientY;
+			pause();
+			track.style.transition = 'none';
+		},
+		{ passive: true }
+	);
+
+	root.addEventListener(
+		'touchmove',
+		(event) => {
+			if (!touching || event.touches.length !== 1) {
+				return;
+			}
+
+			const dx = event.touches[0].clientX - touchStartX;
+			const dy = event.touches[0].clientY - touchStartY;
+
+			if (!dragAxis && (Math.abs(dx) > 6 || Math.abs(dy) > 6)) {
+				dragAxis = Math.abs(dx) > Math.abs(dy) ? 'x' : 'y';
+			}
+
+			if (dragAxis !== 'x') {
+				return;
+			}
+
+			event.preventDefault();
+			setDragPosition(dx);
+		},
+		{ passive: false }
+	);
+
+	root.addEventListener(
+		'touchend',
+		(event) => {
+			if (!touching) {
+				return;
+			}
+			touching = false;
+
+			const touch = event.changedTouches[0];
+			const dx = touch.clientX - touchStartX;
+			const SWIPE_THRESHOLD = Math.min(48, slideWidth() * 0.12);
+
+			if (dragAxis === 'x' && Math.abs(dx) > SWIPE_THRESHOLD) {
+				didSwipe = true;
+				index += dx < 0 ? 1 : -1;
+			}
+
+			apply(true);
+			dragAxis = null;
+			resume();
+		},
+		{ passive: true }
+	);
+
+	root.addEventListener(
+		'touchcancel',
+		() => {
+			if (!touching) {
+				return;
+			}
+			touching = false;
+			dragAxis = null;
+			apply(true);
+			resume();
+		},
+		{ passive: true }
+	);
+
+	root.addEventListener('click', (event) => {
+		if (!didSwipe) {
+			return;
+		}
+		didSwipe = false;
+		event.preventDefault();
+		event.stopPropagation();
+	});
+
 	apply(false);
 
-	return { start, stop, reset, pause, resume, isRunning };
+	return { start, stop, reset, pause, resume, isRunning, goTo };
 }
 
 function syncCarousels(carousels, index, { mobile = false, expandMobile = false } = {}) {

@@ -267,7 +267,7 @@ button:hover {
     border-radius: 14px;
     overflow: hidden;
     border: 1px solid var(--rule-color);
-    margin: 0 0 1.1rem;
+    margin: 0;
 }
 
 .media-frame img {
@@ -278,6 +278,12 @@ button:hover {
 
 .work-carousel {
     position: relative;
+    touch-action: pan-y;
+    margin: 0 0 1.1rem;
+}
+
+.work-feature-panel > .work-carousel:has(+ .work-carousel-dots) {
+    margin-bottom: 0;
 }
 
 .work-carousel-track {
@@ -292,6 +298,39 @@ button:hover {
     object-fit: cover;
     pointer-events: none;
     user-select: none;
+    -webkit-user-drag: none;
+}
+
+.work-carousel-dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.45rem;
+    margin: 0.55rem 0 1.1rem;
+}
+
+.work-carousel-dot {
+    width: 8px;
+    height: 8px;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background: rgba(228, 228, 228, 0.35);
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.work-carousel-dot:hover {
+    background: rgba(228, 228, 228, 0.55);
+}
+
+.work-carousel-dot.is-active {
+    background: var(--highlight-color);
+    transform: scale(1.12);
+}
+
+.work-rail-carousel + .work-carousel-dots {
+    display: none;
 }
 
 /* ---------- Contact rail ---------- */
@@ -1134,6 +1173,10 @@ button:hover {
         align-items: flex-start;
         gap: 1rem;
         color: var(--opaque-color);
+    }
+
+    .work-carousel-dots {
+        display: none;
     }
 
     .work-rail-item.is-expanded .work-rail-expand {
