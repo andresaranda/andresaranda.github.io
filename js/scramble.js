@@ -5,6 +5,8 @@
 //TODO shining pointer in dark side
 //TODO liquid button
 //TODO videos
+//TODO make screenshots 4:3 aspect ratio
+//TODO clean up obsolete code and files
 
 const skills_container = document.querySelector('#scramble')
 const skills_list = document.querySelectorAll('#scramble .skill')
