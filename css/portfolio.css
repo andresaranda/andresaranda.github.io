@@ -131,7 +131,7 @@ button:hover {
     background-color: transparent;
     color: var(--primary-color);
     border: solid var(--primary-color) 2px;
-    border-radius: 10px;
+    border-radius: 16px;
     box-sizing: border-box;
     transition: border 0.4s ease;
     overflow: hidden;
@@ -145,7 +145,7 @@ button:hover {
     height: 0%;
     width: 0%;
     background-color: var(--highlight-color);
-    border-radius: 5px;
+    border-radius: 12px;
     overflow: hidden;
     z-index: -1;
     transform: translate(-50%, -50%);
@@ -188,7 +188,7 @@ button:hover {
 }
 
 .work-feature-panel > a,
-.work-rail-expand > a {
+.work-rail-expand a {
     display: block;
     width: 100%;
 }
@@ -198,9 +198,19 @@ button:hover {
 }
 
 .hero-identity .simple-btn {
-    width: 14.25rem;
+    width: auto;
+    min-width: 14.25rem;
     max-width: 100%;
     margin: 0 auto;
+    padding: 0 1.25rem;
+    border: none;
+    font-size: 1.15rem;
+    letter-spacing: 0.02em;
+    transition: color 0.25s ease, font-weight 0.2s ease;
+}
+
+.hero-identity .simple-btn:hover {
+    border: none;
 }
 
 @keyframes lightFromCenter {
@@ -591,14 +601,16 @@ button:hover {
 .work-rail {
     display: flex;
     flex-direction: column;
+    border-bottom: 1px solid var(--rule-color);
+    padding-bottom: 14vh;
 }
 
 .work-rail-item {
     border-top: 1px solid var(--rule-color);
     text-align: left;
     cursor: pointer;
-    min-height: 42vh;
-    padding: 1.5rem 0.5rem 1.5rem 0;
+    min-height: 48vh;
+    padding: 2rem 0.5rem 2rem 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -611,35 +623,50 @@ button:hover {
     width: 100%;
 }
 
-.work-rail-thumb {
+.work-rail-frame {
+    position: relative;
     width: 100%;
     border-radius: 12px;
     overflow: hidden;
     border: 1px solid var(--rule-color);
     line-height: 0;
+    aspect-ratio: 16 / 10;
+    background: rgba(255, 255, 255, 0.03);
 }
 
-.work-rail-thumb img {
+.work-rail-still {
     display: block;
     width: 100%;
-    height: auto;
-    aspect-ratio: 16 / 10;
+    height: 100%;
     object-fit: cover;
+    transition: opacity 0.45s ease;
 }
 
 .work-rail-carousel {
-    display: none;
+    position: absolute;
+    inset: 0;
     margin: 0;
+    border: none;
+    border-radius: 0;
+    opacity: 0;
+    pointer-events: none;
+    overflow: hidden;
+    transition: opacity 0.45s ease;
+}
+
+.work-rail-carousel .work-carousel-track,
+.work-rail-carousel .work-carousel-track img {
+    height: 100%;
+}
+
+.work-rail-carousel .work-carousel-track img {
+    object-fit: cover;
 }
 
 .work-rail-summary {
     display: flex;
     flex-direction: column;
     gap: 0.35rem;
-}
-
-.work-rail-item:last-child {
-    border-bottom: 1px solid var(--rule-color);
 }
 
 .work-rail-item.is-active {
@@ -788,7 +815,7 @@ button:hover {
     background-color: white;
     color: var(--bg-color);
     border: solid white 2px;
-    border-radius: 12px;
+    border-radius: 18px;
     font-family: var(--font-display);
     font-weight: 700;
     font-size: 1.05rem;
@@ -813,7 +840,7 @@ button:hover {
     height: 0%;
     width: 0%;
     background-color: var(--bg-color);
-    border-radius: 8px;
+    border-radius: 14px;
     overflow: hidden;
     z-index: -1;
     transform: translate(-50%, -50%);
@@ -988,7 +1015,7 @@ button:hover {
     }
 
     .work-rail-item {
-        min-height: 38vh;
+        min-height: 44vh;
     }
 }
 
@@ -1069,23 +1096,51 @@ button:hover {
         min-height: 0;
         padding: 1.35rem 0;
         opacity: 1;
+        justify-content: flex-start;
     }
 
-    .work-rail-item.is-expanded .work-rail-thumb {
-        display: none;
+    .work-rail {
+        padding-bottom: 0;
     }
 
-    .work-rail-item.is-expanded .work-rail-carousel {
-        display: block;
+    /* Same frame: still → carousel crossfade on expand */
+    .work-rail-item.is-expanded:has(.work-rail-carousel img:nth-child(2)) .work-rail-still {
+        opacity: 0;
     }
 
-    .work-rail-item.is-expanded .work-rail-expand {
+    .work-rail-item.is-expanded:has(.work-rail-carousel img:nth-child(2)) .work-rail-carousel {
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    /* Details expand downward from under the category */
+    .work-rail-expand {
+        display: grid;
+        grid-template-rows: 0fr;
+        opacity: 0;
+        margin-top: 0;
+        pointer-events: none;
+        transition:
+            grid-template-rows 0.45s cubic-bezier(0.22, 0.61, 0.36, 1),
+            opacity 0.3s ease,
+            margin-top 0.35s ease;
+    }
+
+    .work-rail-expand-inner {
+        overflow: hidden;
+        min-height: 0;
         display: flex;
         flex-direction: column;
         align-items: flex-start;
         gap: 1rem;
-        margin-top: 0.15rem;
         color: var(--opaque-color);
+    }
+
+    .work-rail-item.is-expanded .work-rail-expand {
+        grid-template-rows: 1fr;
+        opacity: 1;
+        margin-top: 0.85rem;
+        pointer-events: auto;
     }
 
     .services-grid {

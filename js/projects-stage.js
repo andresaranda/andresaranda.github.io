@@ -226,6 +226,73 @@ function scrollRailItemToCenter(item) {
 	});
 }
 
+function easeInOutCubic(t) {
+	return t < 0.5 ? 4 * t * t * t : 1 - (Math.pow(-2 * t + 2, 3) / 2);
+}
+
+function animateScrollTo(targetY, durationMs) {
+	const startY = window.scrollY || window.pageYOffset || 0;
+	const delta = targetY - startY;
+
+	if (Math.abs(delta) < 1) {
+		return;
+	}
+
+	let startTime = null;
+
+	const frame = (now) => {
+		if (startTime === null) {
+			startTime = now;
+		}
+		const t = Math.min((now - startTime) / durationMs, 1);
+		window.scrollTo(0, startY + delta * easeInOutCubic(t));
+		if (t < 1) {
+			window.requestAnimationFrame(frame);
+		} else {
+			window.scrollTo(0, targetY);
+		}
+	};
+
+	window.requestAnimationFrame(frame);
+}
+
+function getExpandedScrollTarget(item, railItems) {
+	const margin = 20;
+	const viewport = window.innerHeight;
+	const scrollY = window.scrollY || window.pageYOffset || 0;
+	const rect = item.getBoundingClientRect();
+	const expandInner = item.querySelector('.work-rail-expand-inner');
+	const expandExtra = expandInner ? expandInner.scrollHeight + 14 : 0;
+
+	// Other open items above this one will collapse, shifting this item upward
+	let collapseAbove = 0;
+	railItems.some((other) => {
+		if (other === item) {
+			return true;
+		}
+		if (other.classList.contains('is-expanded')) {
+			const otherInner = other.querySelector('.work-rail-expand-inner');
+			if (otherInner) {
+				collapseAbove += otherInner.scrollHeight + 14;
+			}
+		}
+		return false;
+	});
+
+	const itemTopAfter = scrollY + rect.top - collapseAbove;
+	const predictedHeight = rect.height + expandExtra;
+	const available = viewport - margin * 2;
+
+	let nextY;
+	if (predictedHeight <= available) {
+		nextY = itemTopAfter - (viewport - predictedHeight) / 2;
+	} else {
+		nextY = itemTopAfter - margin;
+	}
+
+	return Math.max(0, nextY);
+}
+
 function initDesktopStage(root, railItems, carousels) {
 	let activeIndex = 0;
 	let ticking = false;
@@ -298,7 +365,14 @@ function initMobileStage(root, railItems, carousels) {
 		const shouldExpand = !(item.classList.contains('is-expanded') && index === activeIndex);
 
 		activeIndex = index;
-		setActiveProject(root, activeIndex, carousels, { expandMobile: shouldExpand });
+
+		if (shouldExpand) {
+			const targetY = getExpandedScrollTarget(item, railItems);
+			setActiveProject(root, activeIndex, carousels, { expandMobile: true });
+			animateScrollTo(targetY, 450);
+		} else {
+			setActiveProject(root, activeIndex, carousels, { expandMobile: false });
+		}
 	};
 
 	const onKeydown = (event) => {
